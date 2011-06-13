@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Project:		eXFramework: Lightweight PHP framework
- * File: 		exregistry.php
+ * Project: eXFramework: Lightweight PHP framework
+ * File: exregistry.php
  *
  * Global vars container for communication
  * between objects

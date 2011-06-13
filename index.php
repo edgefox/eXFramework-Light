@@ -11,9 +11,12 @@ define ('ROOT_DIR', dirname(__FILE__));
 function __autoload($className)
 {
 	$fileName = strtolower($className) . '.php';
+
 	$classesDir = ROOT_DIR . DIRSEP . 'kernel'. DIRSEP . 'classes' . DIRSEP;
 	$libsDirs = scanDirs(ROOT_DIR . DIRSEP . 'kernel' . DIRSEP . 'libs' . DIRSEP);
-	$dirs = array_merge((array)$classesDir, $libsDirs);
+	$modelsDir = ROOT_DIR . DIRSEP . 'apps'. DIRSEP . 'models' . DIRSEP;
+
+	$dirs = array_merge((array)$classesDir, $libsDirs, (array)$modelsDir);
 
 	foreach ($dirs as $dir)
 	{

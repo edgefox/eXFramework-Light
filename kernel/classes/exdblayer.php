@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Project:		eXFramework: Lightweight PHP framework
- * File: 		exdblayer.php
+ * Project: eXFramework. Lightweight PHP framework
+ * File: exdblayer.php
  *
  * Database abstraction layer class.
  * All communication with database
  * should be performed via this class.
- * 
+ *
  * @author Ivan Lyutov
  * @date 09.11.2011
  * @email ivanlyutov@gmail.com
@@ -21,10 +21,10 @@ class eXDBLayer
 	 * comes from config or set
 	 * manually
 	 */
-	private $dbHost;
-	private $dbUser;
-	private $dbPass;
-	private $dbName;
+	private $dbConfig = array( 'db_host' => '',
+					   'db_user' => '',
+					   'db_pass' => '',
+					   'db_name' => '' );
 	
 	/**
 	 * Active connection field
@@ -46,10 +46,10 @@ class eXDBLayer
 
 		if (!is_array($connection))
 		{
-			$this->dbHost = $settings['db_host'];
-			$this->dbUser = $settings['db_user'];
-			$this->dbPass = $settings['db_pass'];
-			$this->dbName = $settings['db_name'];
+			$this->dbConfig['db_host'] = $settings['db_host'];
+			$this->dbConfig['db_user'] = $settings['db_user'];
+			$this->dbConfig['db_pass'] = $settings['db_pass'];
+			$this->dbConfig['db_name'] = $settings['db_name'];
 
 			$this->db = $connection;
 		}
@@ -87,6 +87,11 @@ class eXDBLayer
 		}
 		
 		return $result;
+	}
+
+	public function getDBConfig()
+	{
+		return $this->dbConfig;
 	}
 
 	/**
@@ -134,10 +139,10 @@ class eXDBLayer
 		if (!is_object(eXRegistry::$_instance['db']))
 		{
 			eXRegistry::$_instance->set('db', new eXDBLayer($settings));
-			return eXRegistry::$_instance;
+			return eXRegistry::$_instance['db'];
 		}
 		else
-			return eXRegistry::$_instance;
+			return eXRegistry::$_instance['db'];
 	}
 }
 

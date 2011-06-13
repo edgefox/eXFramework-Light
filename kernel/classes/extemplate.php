@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Project:		eXFramework: Lightweight PHP framework
- * File: 		extemplate.php
+ * Project: eXFramework. Lightweight PHP framework
+ * File: extemplate.php
  *
  * Class for working with Templates and Layouts.
  * Basicly, wrapper for Smarty.
- * 
+ *
  * @author Ivan Lyutov
  * @date 09.11.2011
  * @email ivanlyutov@gmail.com

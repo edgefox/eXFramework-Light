@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Project:		eXFramework: Lightweight PHP framework
- * File: 		exrouter.php
+ * Project: eXFramework. Lightweight PHP framework
+ * File: exrouter.php
  *
  * Class for routing the paths
  * 

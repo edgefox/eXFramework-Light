@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Project:		eXFramework: Lightweight PHP framework
- * File: 		exini.php
- * 
+ * Project: eXFramework. Lightweight PHP framework
+ * File: exini.php
+ *
  * Class for working with INI files
- * 
+ *
  * @author Ivan Lyutov
  * @date 09.11.2010
  * @email ivanlyutov@gmail.com

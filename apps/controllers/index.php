@@ -8,6 +8,7 @@ class eXControllerIndex extends eXController
 		$tpl = eXTemplate::instance('index.tpl');
 		$string = 'Welcome to eXFramework';
 		$tpl->assign('index', $string);
+
 		parent::display($tpl);
 	}
 }
