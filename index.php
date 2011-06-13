@@ -1,17 +1,18 @@
 <?php
 
-if (version_compare(phpversion(), '5.1.0', '<') == true) { die ('PHP5.1 Only'); }
+if (version_compare(phpversion(), '5.1.0', '<') == true)
+{
+	die ('PHP 5.1 or higher is required');
+}
 
 define ('DIRSEP', DIRECTORY_SEPARATOR);
+define ('ROOT_DIR', dirname(__FILE__));
 
-$site_path = dirname(__FILE__);
-define ('site_path', $site_path);
-
-function __autoload($class_name)
+function __autoload($className)
 {
-	$fileName = strtolower($class_name) . '.php';
-	$classesDir = site_path . DIRSEP . 'kernel'. DIRSEP . 'classes' . DIRSEP;
-	$libsDirs = scanDirs(site_path . DIRSEP . 'kernel' . DIRSEP . 'libs' . DIRSEP);
+	$fileName = strtolower($className) . '.php';
+	$classesDir = ROOT_DIR . DIRSEP . 'kernel'. DIRSEP . 'classes' . DIRSEP;
+	$libsDirs = scanDirs(ROOT_DIR . DIRSEP . 'kernel' . DIRSEP . 'libs' . DIRSEP);
 	$dirs = array_merge((array)$classesDir, $libsDirs);
 
 	foreach ($dirs as $dir)
@@ -59,10 +60,10 @@ if ($settings['db_type'])
 }
 
 $template = eXTemplate::instance();
-$template->setPath(site_path);
+$template->setPath(ROOT_DIR);
 
 $router = eXRouter::instance();
-$router->setPath(site_path . '/apps/controllers');
+$router->setPath(ROOT_DIR . '/apps/controllers');
 $router->delegate();
 
 ?>
