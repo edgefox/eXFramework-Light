@@ -1,0 +1,13 @@
+/**
+ * INFO
+ * This is simple implementation of MVC pattern called eXFramework.
+ * I collect here features that are required in my daily practice.
+ * 
+ * REQUIREMENTS
+ * PHP 5.1 or higher
+ * Apache mod_rewrite enabled
+ * MySQL as database implementation
+ *
+ * INSTALLATION
+ * Simply rename htaccess to .htaccess in root dir of framework
+ */
